@@ -2,6 +2,7 @@ import logo from "@/public/offside 1 (1).png";
 import logo1 from "@/public/logo.png";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function MainPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,9 +15,9 @@ export default function MainPage() {
       >
         <Image src={logo} alt="Logo" width={171} height={62} />
         <nav className="flex space-x-20">
-          <a href="#" className="text-white hover:bg-[#9ace20e0] px-4 py-2 rounded">Home</a>
-          <a href="#" className="text-white hover:bg-[#9ace20e0] px-4 py-2 rounded ">Tournaments</a>
-          <a href="#" className="text-white  hover:bg-[#9ace20e0] px-4 py-2 rounded">Booking</a>
+          <Link href="/" className="text-white hover:bg-[#9ace20e0] px-4 py-2 rounded">Home</Link>
+          <Link href="/tournaments" className="text-white hover:bg-[#9ace20e0] px-4 py-2 rounded ">Tournaments</Link>
+          <Link href="/booking" className="text-white  hover:bg-[#9ace20e0] px-4 py-2 rounded">Booking</Link>
         </nav>
          {/* Profile Navbar */}
       <div className="relative">
@@ -88,12 +89,12 @@ export default function MainPage() {
 
       <footer
   style={{ backgroundColor: "rgba(155, 206, 32, 1)" }}
-  className="flex justify-between items-center py-6 px-12"
+  className="flex flex-col md:flex-row justify-between items-center py-6 px-12 space-y-6 md:space-y-0"
 >
-  {/* Left Side - Description and Logo */}
-  <div className="flex items-center space-x-10">
+  {/* Left Side - Logo and Description */}
+  <div className="flex flex-col items-center md:items-start space-y-4">
     <Image src={logo1} alt="OFFSIDE Logo" width={250} height={270} />
-    <p className="text-black font-bold text-lg">
+    <p className="text-black font-bold text-lg text-center md:text-left">
       OFFSIDE - The easiest way to book football fields near you. Plan your game, reserve your
       pitch, and get ready to play!
     </p>
@@ -101,25 +102,37 @@ export default function MainPage() {
 
   {/* Middle - Links */}
   <div className="flex flex-col items-center space-y-2">
-    <a href="#" className="text-black hover:text-gray-300">Privacy Policy</a>
-    <a href="#" className="text-black hover:text-gray-300">Terms and Conditions</a>
-    <a href="#" className="text-black hover:text-gray-300">Contact Us</a>
+    <a href="#" className="text-black hover:text-gray-300">
+      Privacy Policy
+    </a>
+    <a href="#" className="text-black hover:text-gray-300">
+      Terms and Conditions
+    </a>
+    <a href="#" className="text-black hover:text-gray-300">
+      Contact Us
+    </a>
   </div>
 
   {/* Right Side - Social Media Links */}
-  <div className="flex space-x-4 mt-4">
-    <a href="#" className="text-black hover:text-gray-300 text-x">
-      <i className="fab fa-facebook"></i> {/* Use FontAwesome icons or your preferred icon library */}
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
-    </a>
-    <a href="#" className="text-black hover:text-gray-300 text-x1">
-      <i className="fab fa-instagram"></i>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    </a>
-  </div>
+   {/* Right Side - Social Media Links */}
+   <div className="flex space-x-4 mt-4">
+          <a href="#" className="text-black hover:text-gray-300 text-x">
+            <i className="fab fa-facebook"></i>
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            />
+          </a>
+          <a href="#" className="text-black hover:text-gray-300 text-x1">
+            <i className="fab fa-instagram"></i>
+            <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            />
+          </a>
+        </div>
+    <p className="text-black">&copy; 2024 Football Reservation Website. All rights reserved.</p>
 </footer>
-
 
     </div>
   );
